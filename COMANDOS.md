@@ -34,5 +34,9 @@
    Para lanzar ROS2
    * . ~/ros2_humble/install/local_setup.bash
 
-   Desconfío si el problema para lanzar el ejemplo de SLAM será por el export LDS_MODEL=1 que me he sacado de la manga
+   
+   * source /opt/ros/humble/setup.bash
+   * export TURTLEBOT3_MODEL=waffle
+   * export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:/opt/ros/humble/share/turtlebot3_gazebo/models
+   * export LDS_MODEL=1
 
