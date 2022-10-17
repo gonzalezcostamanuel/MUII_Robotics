@@ -23,3 +23,13 @@
     * sudo usermod -aG docker ${USER}
     * su - ${USER}
     * id -nG
+
+
+   Para lanzar rviz
+   * rviz2
+
+   Para lanzar Coppelia
+   * ./coppelia/CoppeliaSim_Edu_V4_4_0_rev0_Ubuntu22_04/coppeliaSim.sh 
+
+   Para lanzar ROS2
+   * . ~/ros2_humble/install/local_setup.bash
