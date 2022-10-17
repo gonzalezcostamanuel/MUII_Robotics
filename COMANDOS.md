@@ -33,3 +33,6 @@
 
    Para lanzar ROS2
    * . ~/ros2_humble/install/local_setup.bash
+
+   Desconfío si el problema para lanzar el ejemplo de SLAM será por el export LDS_MODEL=1 que me he sacado de la manga
+
