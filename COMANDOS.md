@@ -1,4 +1,4 @@
-# Listado de todos los comandos lanzados en este proyecton para UBUNTU 20.04
+# Listado de todos los comandos lanzados en este proyecto para UBUNTU 20.04
 
 ## Instalación de git
 
@@ -18,7 +18,7 @@
     * sudo apt install docker-ce
     * sudo systemctl status docker
 
-    Ya tendríamos docker instalado, si queremos lanzar los comandos de docker sin sudo podemos lanzar los siguientes comandos, pero ten en cuenta que los cambios son sólo locales (si cierras y vuelves a abrir la consola tendrías que volver a ejecutar los comandos de nuevo)
+    Ya tendríamos docker instalado, si queremos lanzar los comandos de docker sin "sudo" podemos lanzar los siguientes comandos, pero ten en cuenta que los cambios son solo locales (si cierras y vuelves a abrir la consola tendrías que volver a ejecutar los comandos de nuevo)
 
     * sudo usermod -aG docker ${USER}
     * su - ${USER}
@@ -43,7 +43,39 @@
 
 
 
-# Listado en crudo de todos los comandos
+# Comandos ejecutados para instalar ROS y todos los demás útiles en Ubuntu 22.04.1 LTS (jammy)
+
+INSTALACIÓN DE **ROS2** MEDIANTE EL TUTORIAL OFICIAL: https://docs.ros.org/en/crystal/Installation/Linux-Install-Binary.html
+
+    ## Primero actualizamos el sistema
+    1  sudo apt update
+      ## Instalamos los programas:
+        - Curl: para realizar descargas de paquetes que necesitaremos
+        - gnupg2: Es una herramienta que permite utilizar encriptación digital y servicios de firma usando el estándar 
+                  OpenPGP. Lo necesitaremos para autorizar la clave GPG de ROS 
+        - lsb-release: Es uno de los comandos creados bajo el contexto LSB y muestra información sobre la 
+                        distribución GNU/Linux que se está ejecutando en el ordenador. Se usará para facilitar
+                        el lanzamiento de ciertos comandos.
+    2  sudo apt install curl gnupg2 lsb-release
+      ## Añadimos una nueva clave a la lista claves de confianza para afirmar que confiamos en ROS (aunque mintamos)
+    3  curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+      ## Añadimos el repositorio de ROS a nuestro sources list
+    4  sudo sh -c 'echo "deb [arch=$(dpkg --print-architecture)] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros2-latest.list'
+      ## Creamos una carpeta en el directorio HOME para albergar la instalación de ROS2
+    98  mkdir -p ~/ros2_humble/src
+    99  cd ~/ros2_humble
+      ## Necesitamos estas dependencias para diferentes acciones
+    sudo apt install -y   build-essential   cmake   git   libbullet-dev   python3-colcon-common-extensions   python3-flake8   python3-pip   python3-pytest-cov   python3-rosdep   python3-setuptools   python3-vcstool   wget
+      ## Obtenemos el contenido del respositorio de ROS2 humble y lo almacenamos en /src
+    100  vcs import --input https://raw.githubusercontent.com/ros2/ros2/humble/ros2.repos src
+
+
+
+
+
+
+# Listado en crudo de los comandos ejecutados
+
     1  sudo apt update
     2  sudo apt update && sudo apt install curl gnupg2 lsb-release
     3  sudo apt update && sudo apt install curl gnupg2 lsb-release
@@ -59,6 +91,7 @@
     13  curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
     14  sudo sh -c 'echo "deb [arch=$(dpkg --print-architecture)] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/ros2-latest.list'
     15  sudo apt update
+
     16  sudo apt install -y python-rosdep
     17  python3 --version
     18  sudo apt install -y python3-rosdep
@@ -260,4 +293,15 @@
     214  ros2 launch slam_toolbox online_async_launch.py
     215  ros2 launch nav2_bringup tb3_simulation_launch.py slam:=True
     216  history 
+
+
+
+
+
+
+
+
+
+
+
 
