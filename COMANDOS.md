@@ -1,6 +1,5 @@
 # Listado de todos los comandos lanzados en este proyecto para UBUNTU 22.04
 
-
 ## Instalamos ROS2 siguiendo el tutorial oficial
 
 El tutorial lo podemos encontrar en https://docs.ros.org/en/rolling/Installation/Ubuntu-Install-Debians.html
@@ -8,13 +7,14 @@ El tutorial lo podemos encontrar en https://docs.ros.org/en/rolling/Installation
 ---
 En primer lugar, nos aseguramos de que el idioma del sistema es el compatible con ROS2 mediante el comando locale:
 Una localización (locale) es un conjunto de reglas culturales e idiomáticas que abarcan
-     aspectos tales como el idioma usado para mensajes, diferentes juegos de caracteres,
-     convenios lexicográficos, etc.
+aspectos tales como el idioma usado para mensajes, diferentes juegos de caracteres,
+convenios lexicográficos, etc.
+
 ```bash
 locale
 ```
 
-<details open>
+<details>
 <summary>Output</summary>
 <br>
 <pre><code>LANG=en_US.UTF-8
@@ -35,14 +35,15 @@ LC_ALL=
 </code></pre>
 </details>
 
-En nuestro caso ya tenemos UTF-8 configurado. Aun así, ejecutamos los comandos para que veáis el output esperado: 
-primero ejecutamos un update para descargarnos todos los paquetes disponibles y luego 
+En nuestro caso ya tenemos UTF-8 configurado. Aun así, ejecutamos los comandos para que veáis el output esperado:
+primero ejecutamos un update para descargarnos todos los paquetes disponibles y luego
 nos instalamos el paquete "locales" que nos permita configurar los tomas de localización
 
 ```bash
 sudo apt update && sudo apt install locales
 ```
-<details open>
+
+<details  >
 <summary>Output</summary>
 <br>
 <pre><code>[sudo] password for manuel: 
@@ -77,13 +78,14 @@ Use 'sudo apt autoremove' to remove them.
 En nuestro caso se puede comprobar en el output que ya teníamos instalado correctamente el paquete "locales".
 
 Ahora lanzamos todos los comandos de configuración de "locales":
+
 ```bash
 sudo locale-gen en_US en_US.UTF-8
 sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 export LANG=en_US.UTF-8
 ```
 
-<details open>
+<details  >
 <summary>Output</summary>
 <br>
 <pre><code>manuel@manuel-VivoBook-ASUSLaptop-X421EAYB-K413EA:~$ sudo locale-gen en_US en_US.UTF-8
@@ -98,15 +100,14 @@ manuel@manuel-VivoBook-ASUSLaptop-X421EAYB-K413EA:~$ export LANG=en_US.UTF-8
 
 Ahora si volvemos a ejecutar el comando "locale" tenemos que ver las terminaciones UTF-8 (si es que no lo teníamos ya)
 
-
-
-También necesitamos configurar el repositorio de ROS2 para que se pueda instalar. Y antes de ello, debemos 
+También necesitamos configurar el repositorio de ROS2 para que se pueda instalar. Y antes de ello, debemos
 verificar que tenemos activo el repositorio "universe" de Ubuntu:
 
 ```bash
 apt-cache policy | grep universe
 ```
-<details open>
+
+<details  >
 <summary>Output</summary>
 <br>
 <pre><code> 500 http://security.ubuntu.com/ubuntu jammy-security/universe i386 Packages
@@ -128,7 +129,7 @@ apt-cache policy | grep universe
 </code></pre>
 </details>
 
-Efectivamente, vemos que al ejecutar el comando anteriormente citado obtenemos una salida distinta de vacío, 
+Efectivamente, vemos que al ejecutar el comando anteriormente citado obtenemos una salida distinta de vacío,
 por lo que tenemos correctamente habilitado el repositorio Universe.
 
 Si no vemos el anterior output prueba a lanzar los siguientes comandos:
@@ -145,7 +146,8 @@ RECURSOS
 ```bash
 
 ```
-<details open>
+
+<details  >
 <summary>Output</summary>
 <br>
 <pre><code>
