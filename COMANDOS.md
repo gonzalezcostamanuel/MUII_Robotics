@@ -777,6 +777,10 @@ Y continúa...
 </details>
 
 
+![img.png](images/vista_gazebo_rviz.png)
+
+
+
 ---
 ## RECURSOS
 
