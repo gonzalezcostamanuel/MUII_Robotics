@@ -270,10 +270,11 @@ más utilidades de las que la están disponibles en la versión base.
 sudo apt install ros-humble-desktop
 ```
 
- <span style="font-size: xx-small; ">
+ <p style="font-size: xx-small; ">
 Debido a la gran cantidad de líneas que obtenemos en este output no lo podemos mostrar en este fichero. Si quieres 
-verlo lo encontrarás en el fichero [_output_install_ROS.md_](outputs/output_install_ROS.md)
-</span>  
+verlo lo encontrarás en el fichero 
+<a href="file:///outputs/output_install_ROS.md)">output_install_ROS.md</a>
+</p>  
 
 Ahora, debemos configurar todas las variables de entorno necesarias para poder ejecutar ROS en nuestra sesión
 de terminal. Eso se consigue con el comando `source /opt/ros/rolling/setup.bash` o también colocando un 
@@ -413,10 +414,14 @@ un punto "B" de la mejor manera posible.
 sudo apt install ros-humble-navigation2 ros-humble-nav2-bringup ros-humble-turtlebot3*
 ```
 
- <span style="font-size: xx-small; ">
+<p style="font-size: xx-small; ">
 Debido a la gran cantidad de líneas que obtenemos en este output no lo podemos mostrar en este fichero. Si quieres 
-verlo lo encontrarás en el fichero [_output_install_NAV2.md_](outputs/output_install_NAV2.md)
-  </span>  
+verlo lo encontrarás en el fichero 
+<a href="file:///outputs/output_install_NAV2.md)">output_install_NAV2.md</a>
+</p>
+
+
+
 Ahora, si queremos preparar el entorno para una prueba rápida que nos muestre que hemos instalado correctamente 
 NAV2 seteamos las siguientes variables de entorno:
 * **TURTLEBOT3_MODEL**: Indicamos qué tipo de modelo queremos utilizar, es decir, el mapa. Algunas opciones son 
